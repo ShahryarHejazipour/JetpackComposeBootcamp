@@ -17,6 +17,9 @@ import androidx.compose.material.Snackbar
 
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Remove
 
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -33,6 +36,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposebootcamp.tipProject.components.InputField
+import com.example.jetpackcomposebootcamp.tipProject.widgets.RoundIconButton
 
 import com.example.jetpackcomposebootcamp.ui.theme.JetPackComposeBootcampTheme
 
@@ -109,7 +113,6 @@ fun BillForm(modifier: Modifier = Modifier,
              onValChange:(String)-> Unit = {}) {
 
 
-
     //this state is for Checking VALUE of the something that enter in this TextField
     val totalBillState = remember{
         mutableStateOf("")
@@ -159,6 +162,11 @@ fun BillForm(modifier: Modifier = Modifier,
 
                     Row(modifier = Modifier.padding(horizontal = 3.dp),
                     horizontalArrangement = Arrangement.End) {
+                        RoundIconButton(imageVector = Icons.Default.Remove, onClick = {   })
+                        Text(text = "2", modifier = Modifier
+                            .align(Alignment.CenterVertically)
+                            .padding(start = 9.dp, end = 9.dp) )
+                        RoundIconButton(imageVector = Icons.Default.Add, onClick = { })
 
                     }
                     
