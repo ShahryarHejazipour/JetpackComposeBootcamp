@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.jetpackcomposebootcamp.stateIntroProject.MyApp
 import com.example.jetpackcomposebootcamp.tipProject.MainContent
 import com.example.jetpackcomposebootcamp.tipProject.MyAppTip
 import com.example.jetpackcomposebootcamp.tipProject.components.InputField
@@ -39,7 +40,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetPackComposeBootcampTheme {
-              //  MyApp() // Its belongs to stateIntro Lesson
+
+             /*   *//*
+                Its belongs to stateIntro Lesson
+                 *//*
+                MyApp() */
+
+                //-------------------------------------------------------------//
+
+                /*
+                Its belongs to Tip Project
+                 */
+
                 MyAppTip {
 
                    MainContent()
@@ -51,15 +63,12 @@ class MainActivity : ComponentActivity() {
 
 
 
-
-
-
-
-
 //@Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     JetPackComposeBootcampTheme {
+
+        //MyApp()
         MyAppTip {
             Text(text = "Hello Android!!!")
         }
