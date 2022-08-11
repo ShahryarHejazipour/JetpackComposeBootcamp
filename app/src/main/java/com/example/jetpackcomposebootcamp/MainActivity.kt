@@ -20,8 +20,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.jetpackcomposebootcamp.movieAppProject.MyAppMovie
 import com.example.jetpackcomposebootcamp.movieAppProject.model.Movie
 import com.example.jetpackcomposebootcamp.movieAppProject.navigation.MovieNavigation
+import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteScreen
 import com.example.jetpackcomposebootcamp.ui.theme.JetPackComposeBootcampTheme
 
 
@@ -46,21 +48,29 @@ class MainActivity : ComponentActivity() {
 
                    MainContent()
                 }*/
-
-                MyAppMovie {
+                //---------------------------------------------------------------//
+                /*
+                Its belongs to Movie Project
+                 */
+              /*  MyAppMovie {
 
                    MovieNavigation()
 
+                }*/
+
+                Surface(color = MaterialTheme.colors.background) {
+                   NoteScreen(
+                       note = emptyList(),
+                       onRemoveNote = {},
+                       onAddNote = {}
+                   )
                 }
             }
         }
     }
 }
 
-@Composable
-fun MyAppMovie(content : @Composable () -> Unit) {
-    content()
-}
+
 
 
 
@@ -75,9 +85,9 @@ fun DefaultPreview() {
        /* MyAppTip {
             Text(text = "Hello Android!!!")
         }*/
-
+/*
         MyAppMovie {
             MovieNavigation()
-        }
+        }*/
     }
 }
