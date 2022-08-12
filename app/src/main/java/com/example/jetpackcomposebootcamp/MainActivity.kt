@@ -1,9 +1,13 @@
 package com.example.jetpackcomposebootcamp
 
+import android.os.Build
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Note
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,14 +24,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.jetpackcomposebootcamp.movieAppProject.MyAppMovie
 import com.example.jetpackcomposebootcamp.movieAppProject.model.Movie
 import com.example.jetpackcomposebootcamp.movieAppProject.navigation.MovieNavigation
+import com.example.jetpackcomposebootcamp.noteAppProject.data.NoteDataSource
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteScreen
+import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteViewModel
 import com.example.jetpackcomposebootcamp.ui.theme.JetPackComposeBootcampTheme
 
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -59,15 +68,31 @@ class MainActivity : ComponentActivity() {
                 }*/
 
                 Surface(color = MaterialTheme.colors.background) {
-                   NoteScreen(
-                       note = emptyList(),
-                       onRemoveNote = {},
-                       onAddNote = {}
-                   )
+
+                    val noteViewModel:NoteViewModel by viewModels()
+
+                    NotesApp(noteViewModel = noteViewModel)
+
                 }
             }
         }
     }
+}
+
+@RequiresApi(Build.VERSION_CODES.O)
+@Composable
+fun NotesApp(noteViewModel: NoteViewModel = viewModel()) {
+    val notesList = noteViewModel.getAllNotes()
+    NoteScreen(
+        notes = notesList ,
+        onRemoveNote = {
+            noteViewModel.removeNote(it)
+        },
+        onAddNote = {
+            noteViewModel.addNote(note = it)
+        }
+    )
+
 }
 
 
