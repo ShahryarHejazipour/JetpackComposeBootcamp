@@ -33,8 +33,9 @@ import com.example.jetpackcomposebootcamp.noteAppProject.data.NoteDataSource
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteScreen
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteViewModel
 import com.example.jetpackcomposebootcamp.ui.theme.JetPackComposeBootcampTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
