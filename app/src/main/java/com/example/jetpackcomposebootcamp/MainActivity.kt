@@ -82,15 +82,15 @@ class MainActivity : ComponentActivity() {
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun NotesApp(noteViewModel: NoteViewModel = viewModel()) {
-    val notesList = noteViewModel.getAllNotes()
+fun NotesApp(noteViewModel: NoteViewModel) {
+    val notesList = noteViewModel.noteList.collectAsState().value
     NoteScreen(
         notes = notesList ,
         onRemoveNote = {
             noteViewModel.removeNote(it)
         },
         onAddNote = {
-            noteViewModel.addNote(note = it)
+            noteViewModel.addNote(it)
         }
     )
 
