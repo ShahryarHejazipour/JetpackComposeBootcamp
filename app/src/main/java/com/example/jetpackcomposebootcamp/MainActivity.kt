@@ -29,6 +29,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.jetpackcomposebootcamp.movieAppProject.MyAppMovie
 import com.example.jetpackcomposebootcamp.movieAppProject.model.Movie
 import com.example.jetpackcomposebootcamp.movieAppProject.navigation.MovieNavigation
+import com.example.jetpackcomposebootcamp.noteAppProject.NotesApp
 import com.example.jetpackcomposebootcamp.noteAppProject.data.NoteDataSource
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteScreen
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteViewModel
@@ -67,34 +68,23 @@ class MainActivity : ComponentActivity() {
                    MovieNavigation()
 
                 }*/
-
+/*
                 Surface(color = MaterialTheme.colors.background) {
 
                     val noteViewModel:NoteViewModel by viewModels()
 
                     NotesApp(noteViewModel = noteViewModel)
 
-                }
+                }*/
+
+                //------------------------------------------------------------------//
+
             }
         }
     }
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
-@Composable
-fun NotesApp(noteViewModel: NoteViewModel) {
-    val notesList = noteViewModel.noteList.collectAsState().value
-    NoteScreen(
-        notes = notesList ,
-        onRemoveNote = {
-            noteViewModel.removeNote(it)
-        },
-        onAddNote = {
-            noteViewModel.addNote(it)
-        }
-    )
 
-}
 
 
 
