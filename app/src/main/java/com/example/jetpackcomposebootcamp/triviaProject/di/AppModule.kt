@@ -1,6 +1,7 @@
 package com.example.jetpackcomposebootcamp.triviaProject.di
 
 import com.example.jetpackcomposebootcamp.triviaProject.network.QuestionAPI
+import com.example.jetpackcomposebootcamp.triviaProject.repository.QuestionRepository
 import com.example.jetpackcomposebootcamp.triviaProject.util.Constants
 import com.google.gson.Gson
 import dagger.Module
@@ -15,6 +16,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object AppModule {
+
+
+    @Singleton
+    @Provides
+    fun provideQuestionRepository(api: QuestionAPI) = QuestionRepository(api)
+
+
 
     @Singleton
     @Provides
