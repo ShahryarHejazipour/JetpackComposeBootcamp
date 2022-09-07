@@ -33,7 +33,9 @@ import com.example.jetpackcomposebootcamp.noteAppProject.NotesApp
 import com.example.jetpackcomposebootcamp.noteAppProject.data.NoteDataSource
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteScreen
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteViewModel
+import com.example.jetpackcomposebootcamp.triviaProject.components.Questions
 import com.example.jetpackcomposebootcamp.triviaProject.screens.QuestionViewModel
+import com.example.jetpackcomposebootcamp.triviaProject.screens.TriviaHome
 import com.example.jetpackcomposebootcamp.ui.theme.JetPackComposeBootcampTheme
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -82,11 +84,8 @@ class MainActivity : ComponentActivity() {
                 //------------------------------------------------------------------//
 
                 Surface(color = MaterialTheme.colors.background) {
-                    val qViewModel : QuestionViewModel by viewModels()
 
-                    TriviaHome(viewModel = qViewModel )
-
-
+                    TriviaHome()
 
                 }
 
@@ -95,32 +94,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun TriviaHome(viewModel: QuestionViewModel ) {
-
-    Questions(viewModel = viewModel)
-
-}
-
-@Composable
-fun Questions(viewModel: QuestionViewModel) {
-
-    val questions = viewModel.data.value.data?.toMutableList()
-    if (viewModel.data.value.loading == true){
-        Log.d("Loading", "Questions: Loading ...")
-    }else{
-        Log.d("Loading", "Questions: Loading Stopped ...")
-
-        questions?.forEach { questionItem ->
-
-            Log.d("Result", "Questions: ${questionItem.question}")
-
-        }
-
-    }
-
-
-}
 
 
 @Preview(showBackground = true)
