@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "253488152628",
+    "project_id": "areader-9040d",
+    "storage_bucket": "areader-9040d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253488152628:android:51730d4a70c26d2e220a61",
+        "android_client_info": {
+          "package_name": "com.example.jetpackcomposebootcamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253488152628-1ptms834mb6i9djmadkl0bunp9agn88g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnPOZVVqU4WBCWq3D0oWOto0NQ1OYsJss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253488152628-1ptms834mb6i9djmadkl0bunp9agn88g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

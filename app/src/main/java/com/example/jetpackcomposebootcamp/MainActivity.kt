@@ -83,11 +83,16 @@ class MainActivity : ComponentActivity() {
 
                 //------------------------------------------------------------------//
 
-                Surface(color = MaterialTheme.colors.background) {
+                /*
+               Its belongs to Trivia Project
+                */
+
+           /*     Surface(color = MaterialTheme.colors.background) {
 
                     TriviaHome()
 
-                }
+                }*/
+                //------------------------------------------------------------------//
 
             }
         }
