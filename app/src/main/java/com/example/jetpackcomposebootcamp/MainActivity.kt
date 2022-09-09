@@ -37,6 +37,7 @@ import com.example.jetpackcomposebootcamp.triviaProject.components.Questions
 import com.example.jetpackcomposebootcamp.triviaProject.screens.QuestionViewModel
 import com.example.jetpackcomposebootcamp.triviaProject.screens.TriviaHome
 import com.example.jetpackcomposebootcamp.ui.theme.JetPackComposeBootcampTheme
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 
@@ -93,6 +94,36 @@ class MainActivity : ComponentActivity() {
 
                 }*/
                 //------------------------------------------------------------------//
+                /*
+              Its belongs to AReader Project
+               */
+
+                val db = FirebaseFirestore.getInstance()
+                val user : MutableMap<String,Any> = HashMap()
+                user["firstName"] = "Shahryar"
+                user["lastName"] = "Hejazipour"
+
+                db.collection("users")
+                    .add(user)
+                    .addOnSuccessListener {
+                        Log.d("FB", "onCreate: ${it.id}")
+                    }.addOnFailureListener{
+                        Log.d("FB", "onCreate: $it")
+
+                    }
+
+
+                Surface(color = MaterialTheme.colors.background) {
+                    db.collection("users")
+                        .add(user)
+                        .addOnSuccessListener {
+                            Log.d("FB", "onCreate: ${it.id}")
+                        }.addOnFailureListener{
+                            Log.d("FB", "onCreate: $it")
+
+                        }
+
+                }
 
             }
         }
