@@ -98,33 +98,10 @@ class MainActivity : ComponentActivity() {
               Its belongs to AReader Project
                */
 
-                val db = FirebaseFirestore.getInstance()
-                val user : MutableMap<String,Any> = HashMap()
-                user["firstName"] = "Shahryar"
-                user["lastName"] = "Hejazipour"
-
-                db.collection("users")
-                    .add(user)
-                    .addOnSuccessListener {
-                        Log.d("FB", "onCreate: ${it.id}")
-                    }.addOnFailureListener{
-                        Log.d("FB", "onCreate: $it")
-
-                    }
-
-
                 Surface(color = MaterialTheme.colors.background) {
-                    db.collection("users")
-                        .add(user)
-                        .addOnSuccessListener {
-                            Log.d("FB", "onCreate: ${it.id}")
-                        }.addOnFailureListener{
-                            Log.d("FB", "onCreate: $it")
 
-                        }
 
                 }
-
             }
         }
     }
