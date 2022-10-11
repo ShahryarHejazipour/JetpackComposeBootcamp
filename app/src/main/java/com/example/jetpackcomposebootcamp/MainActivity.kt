@@ -33,6 +33,7 @@ import com.example.jetpackcomposebootcamp.noteAppProject.NotesApp
 import com.example.jetpackcomposebootcamp.noteAppProject.data.NoteDataSource
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteScreen
 import com.example.jetpackcomposebootcamp.noteAppProject.screen.NoteViewModel
+import com.example.jetpackcomposebootcamp.readerAppProject.ReaderApp
 import com.example.jetpackcomposebootcamp.triviaProject.components.Questions
 import com.example.jetpackcomposebootcamp.triviaProject.screens.QuestionViewModel
 import com.example.jetpackcomposebootcamp.triviaProject.screens.TriviaHome
@@ -97,11 +98,8 @@ class MainActivity : ComponentActivity() {
                 /*
               Its belongs to AReader Project
                */
+                ReaderApp()
 
-                Surface(color = MaterialTheme.colors.background) {
-
-
-                }
             }
         }
     }
@@ -122,5 +120,7 @@ fun DefaultPreview() {
         MyAppMovie {
             MovieNavigation()
         }*/
+
+        ReaderApp()
     }
 }

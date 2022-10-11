@@ -3,6 +3,6 @@ package com.example.jetpackcomposebootcamp.triviaProject
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
-@HiltAndroidApp
+//@HiltAndroidApp
 class TriviaApplication : Application() {
 }
