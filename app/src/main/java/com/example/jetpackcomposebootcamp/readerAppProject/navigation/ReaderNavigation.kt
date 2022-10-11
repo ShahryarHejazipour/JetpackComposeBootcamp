@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.jetpackcomposebootcamp.movieAppProject.screens.details.DetailsScreen
 import com.example.jetpackcomposebootcamp.readerAppProject.screens.details.BookDetailsScreen
 import com.example.jetpackcomposebootcamp.readerAppProject.screens.home.Home
 import com.example.jetpackcomposebootcamp.readerAppProject.screens.login.ReaderLoginScreen
@@ -28,7 +27,7 @@ fun ReaderNavigation() {
 
 
         composable(ReaderScreens.LoginScreen.name){
-            ReaderLoginScreen()
+            ReaderLoginScreen(navController = navController)
 
         }
         composable(ReaderScreens.CreateAccountScreen.name){
